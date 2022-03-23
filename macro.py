@@ -4,8 +4,8 @@ import pynput.keyboard as pynk
 import win32gui, win32con
 global mouse, keys, focusedInstance
 
-mouse=pynm.Controller()
-keys=pynk.Controller()
+mouse = pynm.Controller()
+keys = pynk.Controller()
 
 toplist = []
 winlist = []
