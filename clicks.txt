@@ -1,5 +1,5 @@
 950  623          save and quit
 950  450          singleplayer
-1200  900         create new world
-700    970        create new world
+1200 900         create new world
+700 970        create new world
 
