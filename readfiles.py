@@ -4,7 +4,7 @@ def replace(str, search, replace):
     return str
 
 def readfile(name, length, datatype):
-    l=[]
+    l = []
     file=open(name)
     for line in file:
         linedata=replace(line.rstrip(), "  ", " ").split(" ")[0:length]
@@ -38,4 +38,3 @@ if __name__=="__main__":
     input()
     clicks=readfile("clicks.txt", 2, "i")
     delays=readfile("delays.txt", 1, "f")
-    
