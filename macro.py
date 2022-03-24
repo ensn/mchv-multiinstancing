@@ -87,5 +87,5 @@ while True:
     if keyboard.is_pressed("y"):
         reset(minecrafts)
     for gamemacro in ingamemacros:
-        gamemacro.periodic_call() 
-
+        gamemacro.periodic_call()
+    time.sleep(0.01)
