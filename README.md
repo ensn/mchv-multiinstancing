@@ -7,12 +7,12 @@ Multi-Instance Macro for Historical Versions of Minecraft: Java Edition
 - run as many minecraft instances as you want<br />
 - close Minecraft launcher<br />
 - run macro.py with python.exe<br />
-- reset using y (this can be changed in line 82 of macro.py (you can open it with Notepad))<br />
+- reset using y on your keyboard (this can be changed in line 89 of macro.py (you can open it with Notepad))<br />
 - whenever an instance is closed or opened, restart macro.py<br />
 
 ## in-game-macros
 for custom key-to-key macros like rebinding f5, 9, etc. to other keys<br />
-how to customize: open macro.py with Notepad, edit macros in line 81 like this:<br />
+how to customize: open macro.py with Notepad, edit macros in line 87 like this:<br />
 ingamemacros=[GameMacro(key, action), GameMacro("t", "7"), GameMacro("c", pynk.Key.f5)]<br />
 numbers and letters have to be written in "", special keys like this: pynk.Key.shift, pynk.Key.return. A list of special key names can be found [here]( https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key)<br />
 ingamemacros=[] if you want no in game macros<br />
