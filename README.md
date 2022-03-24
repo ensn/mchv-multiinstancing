@@ -24,4 +24,6 @@ ingamemacros=[] if you want no in game macros<br />
 - macro doesnt click/clicks before gui loads - increase delays in the delays.txt file<br />
 - macro clicks in the wrong spots - adjust coordinates in the clicks.txt file (deafault is for 1080x1920 monitors, maximized (not fullscreen), Large GUI, Beta 1.8.1)<br />
 - macro runs in game - only start the macro when you are NOT paused<br />
+- macro focuses on non-Minecraft windows - there is the word 'minecraft' in that window's title. Close or rename the window and restart macro.py
+- macro doesnt focus on instance - there has to be the word 'minecraft' (not case sensitive) in the window's title
 - open macro.py with Python/Lib/idlelib/idle.bat and run using f5 to see error message
