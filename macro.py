@@ -1,7 +1,10 @@
 import keyboard, time, readfiles
 import pynput.mouse as pynm
 import pynput.keyboard as pynk
-import win32gui, win32con
+try:
+    import win32gui
+except:
+    import win32.win32gui as win32gui
 global mouse, keys, focusedInstance
 
 mouse = pynm.Controller()
