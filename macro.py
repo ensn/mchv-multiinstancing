@@ -80,6 +80,8 @@ DELAYS=readfiles.readfile(dir_path+"\\delays.txt", 1, "f")
 CLICKS=readfiles.readfile(dir_path+"\\clicks.txt", 2, "i")
 minecrafts=getwinlist()
 instances=len(minecrafts)
+print("Instances: "+str(instances))
+print("Seconds/Reset: "+str((DELAYS[6][0]+DELAYS[7][0])*4+DELAYS[0][0]+DELAYS[1][0]+DELAYS[2][0]+DELAYS[3][0]+DELAYS[4][0]+DELAYS[5][0]+DELAYS[8][0]+DELAYS[9][0]))
 focusedInstance=0
 focusWindow(focusedInstance, minecrafts)
 ingamemacros=[GameMacro("t", "7"), GameMacro("g", "8"), GameMacro("v", "9"), GameMacro("c", pynk.Key.f5)]
