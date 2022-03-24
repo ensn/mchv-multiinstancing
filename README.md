@@ -3,7 +3,7 @@ Multi-Instance Macro for Historical Versions of Minecraft: Java Edition
 
 ## how to use
 - [download and install python](https://www.python.org/downloads/)<br />
-- install from pip: 'keyboard', 'pynput', 'pywin32', 'win32gui' (look up a tutorial if you dont know how to install packages from pip)<br />
+- install from pip: 'keyboard', 'pynput', 'pywin32' (look up a tutorial if you dont know how to install packages from pip)<br />
 - run as many minecraft instances as you want<br />
 - close Minecraft launcher<br />
 - run macro.py with python.exe<br />
