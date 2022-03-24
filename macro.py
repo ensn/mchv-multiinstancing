@@ -1,4 +1,4 @@
-import keyboard, time, readfiles
+import keyboard, time, os, readfiles
 import pynput.mouse as pynm
 import pynput.keyboard as pynk
 try:
@@ -7,8 +7,8 @@ except:
     import win32.win32gui as win32gui
 global mouse, keys, focusedInstance
 
-mouse = pynm.Controller()
-keys = pynk.Controller()
+mouse=pynm.Controller()
+keys=pynk.Controller()
 
 toplist = []
 winlist = []
@@ -75,8 +75,9 @@ class GameMacro:
             if time.perf_counter() > this.start_time_sec + DELAYS[10][0]:
                 this.step=0
 
-DELAYS=readfiles.readfile("delays.txt", 1, "f")
-CLICKS=readfiles.readfile("clicks.txt", 2, "i")
+dir_path=os.path.dirname(os.path.abspath(__file__))
+DELAYS=readfiles.readfile(dir_path+"\\delays.txt", 1, "f")
+CLICKS=readfiles.readfile(dir_path+"\\clicks.txt", 2, "i")
 minecrafts=getwinlist()
 instances=len(minecrafts)
 focusedInstance=0
@@ -87,3 +88,4 @@ while True:
         reset(minecrafts)
     for gamemacro in ingamemacros:
         gamemacro.periodic_call() 
+
