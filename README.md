@@ -11,14 +11,7 @@ Multi-Instance Macro for Historical Versions of Minecraft: Java Edition
 - whenever an instance is closed or opened, restart macro.py<br />
 
 ## customisation
-- edit settings.py in Notpad while keeping syntax correct
-
-## in-game-rebinds
-for rebinding key-key f5, 9, etc. to other keys<br />
-how to customize: open macro.py with Notepad, edit macros in line 95 like this:<br />
-ingamemacros=[GameMacro(key, action), GameMacro("t", "7"), GameMacro("c", pynk.Key.f5)]<br />
-numbers and letters have to be written in "", special keys like this: pynk.Key.shift, pynk.Key.return. A list of special key names can be found [here]( https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key)<br />
-ingamemacros=[] if you want no in game macros<br />
+- edit settings.py in Notepad while keeping the syntax the same
 
 ## it doesnt work
 - make sure your pc is running windows<br />
