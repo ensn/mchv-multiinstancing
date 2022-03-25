@@ -10,12 +10,12 @@ Multi-Instance Macro for Historical Versions of Minecraft: Java Edition
 - reset using y, livesplit will start if start/stop is set to x (this can be changed in settings.py (you can open it with notepad))<br />
 - whenever an instance is closed or opened, restart macro.py<br />
 
-## in-game-macros
 ## customisation
 - edit settings.py in Notpad while keeping syntax correct
 
-for custom key-to-key macros like rebinding f5, 9, etc. to other keys<br />
-how to customize: open macro.py with Notepad, edit macros in line 87 like this:<br />
+## in-game-rebinds
+for rebinding key-key f5, 9, etc. to other keys<br />
+how to customize: open macro.py with Notepad, edit macros in line 95 like this:<br />
 ingamemacros=[GameMacro(key, action), GameMacro("t", "7"), GameMacro("c", pynk.Key.f5)]<br />
 numbers and letters have to be written in "", special keys like this: pynk.Key.shift, pynk.Key.return. A list of special key names can be found [here]( https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key)<br />
 ingamemacros=[] if you want no in game macros<br />
@@ -23,7 +23,7 @@ ingamemacros=[] if you want no in game macros<br />
 ## it doesnt work
 - make sure your pc is running windows<br />
 - make sure macro.py and settings.py are there and in the same directory<br />
-- run settings.py - if it fails, there is a error in that file<br />
+- run settingstest.py - if it fails, there is a error in settings.py<br />
 - macro doesnt click/clicks before gui loads - increase delays in the settings.py file<br />
 - macro clicks in the wrong spots - adjust coordinates in the settings.txt file (default is for 1080x1920 monitors, maximized (not fullscreen), Large GUI, Beta 1.8.1)<br />
 - macro runs in game - only start the macro when you are NOT paused<br />
