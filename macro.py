@@ -27,17 +27,17 @@ def focusWindow(indx, window):
 def click(pos):
     global mouse
     mouse.position = (pos[0], pos[1])
-    time.sleep(settings.delays[6])
+    time.sleep(settings.delays[11])
     mouse.press(pynm.Button.left)
-    time.sleep(settings.delays[7])
+    time.sleep(settings.delays[12])
     mouse.release(pynm.Button.left)
 
 def send(x):
     global keys
     keys.press(x)
-    time.sleep(settings.delays[8])
+    time.sleep(settings.delays[13])
     keys.release(x)
-    time.sleep(settings.delays[9])
+    time.sleep(settings.delays[14])
 
 def reset(minecrafts):
     global focusedInstance
@@ -48,14 +48,27 @@ def reset(minecrafts):
     click(settings.clicks[1])
     time.sleep(settings.delays[2])
     click(settings.clicks[2])
-    time.sleep(settings.delays[3])
-    click(settings.clicks[3])
-    time.sleep(settings.delays[4])
+    if settings.seed!=0:
+        time.sleep(settings.delays[4])
+        click(settings.clicks[3])
+        time.sleep(settings.delays[5])
+        click(settings.clicks[4])
+        time.sleep(settings.delays[6])
+        for char in str(settings.seed):
+            send(char)
+        time.sleep(settings.delays[7])
+    else:
+        time.sleep(settings.delays[3])
+    click(settings.clicks[5])
+    time.sleep(settings.delays[8])
     focusedInstance=(focusedInstance+1)%len(minecrafts)
     print(focusedInstance)
     focusWindow(focusedInstance, minecrafts)
-    time.sleep(settings.delays[5])
+    time.sleep(settings.delays[9])
     send(pynk.Key.esc)
+    if settings.livesplit:
+        time.sleep(settings.delays[10])
+        send(settings.timer_start)
             
 class GameMacro:
     def __init__(this, key, action):
@@ -70,7 +83,7 @@ class GameMacro:
                 send(this.action)
                 this.step += 1
         if this.step==1:
-            if time.perf_counter() > this.start_time_sec + settings.delays[10]:
+            if time.perf_counter() > this.start_time_sec + settings.delays[15]:
                 this.step=0
 
 minecrafts=getwinlist()
@@ -81,7 +94,7 @@ focusedInstance=0
 focusWindow(focusedInstance, minecrafts)
 ingamemacros=[GameMacro("t", "7"), GameMacro("g", "8"), GameMacro("v", "9"), GameMacro("c", pynk.Key.f5)]
 while True:
-    if keyboard.is_pressed("y"):
+    if keyboard.is_pressed(settings.reset_key):
         reset(minecrafts)
     for gamemacro in ingamemacros:
         gamemacro.periodic_call()
