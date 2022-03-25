@@ -1,7 +1,7 @@
-import settings
 try:
-    if len(settings.delays)!=16:
-        print("Warning: Delays should have 16 entrys")
+    import settings
+    if len(settings.delays)!=18:
+        print("Warning: Delays should have 18 entrys")
     if len(settings.clicks)!=6:
         print("Warning: clicks should have 6 entrys")
     print("No errors")
