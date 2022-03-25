@@ -1,4 +1,4 @@
-import keyboard, time, os, readfiles
+import keyboard, time, os, settings
 import pynput.mouse as pynm
 import pynput.keyboard as pynk
 try:
@@ -24,39 +24,37 @@ def focusWindow(indx, window):
     window = window[indx]
     win32gui.SetForegroundWindow(window[0])
 
-def click(x, y):
+def click(pos):
     global mouse
-    mouse.position = (x,y)
-    time.sleep(DELAYS[6][0])
+    mouse.position = (pos[0], pos[1])
+    time.sleep(settings.delays[6])
     mouse.press(pynm.Button.left)
-    time.sleep(DELAYS[7][0])
+    time.sleep(settings.delays[7])
     mouse.release(pynm.Button.left)
 
 def send(x):
     global keys
     keys.press(x)
-    time.sleep(DELAYS[8][0])
+    time.sleep(settings.delays[8])
     keys.release(x)
-    time.sleep(DELAYS[9][0])
+    time.sleep(settings.delays[9])
 
 def reset(minecrafts):
     global focusedInstance
     send(pynk.Key.esc)
-    time.sleep(DELAYS[0][0])
-    click(CLICKS[0][0], CLICKS[0][1])
-    time.sleep(DELAYS[1][0])
-    click(CLICKS[1][0], CLICKS[1][1])
-    time.sleep(DELAYS[2][0])
-    click(CLICKS[2][0], CLICKS[2][1])
-    time.sleep(DELAYS[3][0])
-    click(CLICKS[3][0], CLICKS[3][1])
-    time.sleep(DELAYS[4][0])
-    if focusedInstance==instances-1:
-        focusedInstance=0
-    else:
-        focusedInstance+=1
+    time.sleep(settings.delays[0])
+    click(settings.clicks[0])
+    time.sleep(settings.delays[1])
+    click(settings.clicks[1])
+    time.sleep(settings.delays[2])
+    click(settings.clicks[2])
+    time.sleep(settings.delays[3])
+    click(settings.clicks[3])
+    time.sleep(settings.delays[4])
+    focusedInstance=(focusedInstance+1)%len(minecrafts)
+    print(focusedInstance)
     focusWindow(focusedInstance, minecrafts)
-    time.sleep(DELAYS[5][0])
+    time.sleep(settings.delays[5])
     send(pynk.Key.esc)
             
 class GameMacro:
@@ -72,16 +70,13 @@ class GameMacro:
                 send(this.action)
                 this.step += 1
         if this.step==1:
-            if time.perf_counter() > this.start_time_sec + DELAYS[10][0]:
+            if time.perf_counter() > this.start_time_sec + settings.delays[10]:
                 this.step=0
 
-dir_path=os.path.dirname(os.path.abspath(__file__))
-DELAYS=readfiles.readfile(dir_path+"\\delays.txt", 1, "f")
-CLICKS=readfiles.readfile(dir_path+"\\clicks.txt", 2, "i")
 minecrafts=getwinlist()
 instances=len(minecrafts)
 print("Instances: "+str(instances))
-print("Seconds/Reset: "+str((DELAYS[6][0]+DELAYS[7][0])*4+DELAYS[0][0]+DELAYS[1][0]+DELAYS[2][0]+DELAYS[3][0]+DELAYS[4][0]+DELAYS[5][0]+DELAYS[8][0]+DELAYS[9][0]))
+#print("Seconds/Reset: "+str((settings.delays[6]+settings.delays[7])*4+DELAYS[0][0]+DELAYS[1][0]+DELAYS[2][0]+DELAYS[3][0]+DELAYS[4][0]+DELAYS[5][0]+DELAYS[8][0]+DELAYS[9][0]))
 focusedInstance=0
 focusWindow(focusedInstance, minecrafts)
 ingamemacros=[GameMacro("t", "7"), GameMacro("g", "8"), GameMacro("v", "9"), GameMacro("c", pynk.Key.f5)]
