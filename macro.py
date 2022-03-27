@@ -41,7 +41,6 @@ def send(x):
 
 def reset(minecrafts):
     global focusedInstance
-    starttime=time.perf_counter()
     send(pynk.Key.esc)
     time.sleep(settings.delays[0])
     click(settings.clicks[0])
@@ -74,7 +73,6 @@ def reset(minecrafts):
     if settings.livesplit:
         time.sleep(settings.delays[12])
         send(settings.timer_start)
-    print(time.perf_counter()-starttime)
 
 def timeestimate(minecrafts):
     tclick=settings.delays[13]+settings.delays[14]
@@ -114,7 +112,9 @@ print("Instances: "+str(instances))
 print("Seconds/Reset: "+str(timeestimate(minecrafts)))
 focusedInstance=0
 focusWindow(focusedInstance, minecrafts)
-ingamemacros=[GameMacro("t", "7"), GameMacro("g", "8"), GameMacro("v", "9"), GameMacro("c", pynk.Key.f5)]
+ingamemacros=[]
+for item in settings.rebinds:
+    ingamemacros.append(GameMacro(item[0], item[1]))
 while True:
     if keyboard.is_pressed(settings.reset_key):
         reset(minecrafts)
