@@ -15,7 +15,7 @@ Multi-Instance Macro for Historical Versions of Minecraft: Java Edition
 
 ## it doesnt work
 - make sure your pc is running windows<br />
-- make sure macro.py and settings.py are there and in the same directory<br />
+- make sure macro.py and settings.py in the same directory<br />
 - run settingstest.py - if it fails, there is a error in settings.py<br />
 - macro doesnt click/clicks before gui loads - increase delays in the settings.py file<br />
 - macro clicks in the wrong spots - adjust coordinates in the settings.txt file (default is for 1080x1920 monitors, maximized (not fullscreen), Large GUI, Beta 1.8.1)<br />
