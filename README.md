@@ -1,5 +1,5 @@
 # mchv-multiinstancing
-Multi-Instance Macro for Historical Versions of Minecraft: Java Edition
+Multi-Instance Macro for Historical Versions of Minecraft: Java Edition for Windows
 
 ## how to use
 - [download and install python](https://www.python.org/downloads/)<br />
