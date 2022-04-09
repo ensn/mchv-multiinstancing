@@ -3,7 +3,7 @@ reset_key="y"           #Set this as your livesplit reset key too (numbers and l
 timer_start="x"         #Set this as your livesplit start/stop key too (Same rules as above apply)
 livesplit=True          #Starts the timer as soon as the instance is unpaused
 saving_world_skip=False #Skips the 'Saving Chunks' screen when 3 or more instances are active
-visual_cue=False        #Looks at the screen to determine whether the 'Saving Chunks' screen has ended
+visual_cue=False        #Looks at the screen to determine whether the 'Saving Chunks' screen has ended, requires 'pyautogui' from pip
 
 delays=(
     0.1,                #esc - save and quit
