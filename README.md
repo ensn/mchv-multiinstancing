@@ -10,6 +10,9 @@ Multi-Instance Macro for Historical Versions of Minecraft: Java Edition for Wind
 - reset using y, use x as your livesplit start/stop key<br />
 - whenever an instance is closed or opened, restart macro.py<br />
 
+## customisation
+- edit settings.py in Notepad while keeping the syntax the same
+
 ## it doesnt work
 - focus all minecraft instances manually, then restart macro.py
 - run macro.py in Python/Lib/idlelib/idle.bat using f5 to see error message
