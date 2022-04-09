@@ -132,7 +132,7 @@ class GameMacro:
                 send(this.action)
                 this.step += 1
         if this.step==1:
-            if time.perf_counter() > this.start_time_sec + settings.delays[17]:
+            if time.perf_counter() > this.start_time_sec + settings.delays[18]:
                 this.step=0
 
 
