@@ -1,5 +1,5 @@
 seed=0                  #put 0 for random seed
-reset_key="y"           #Set this as your livesplit reset key too (numbers and letters have to be written in "", special keys like this: pynk.Key.shift, pynk.Key.return. A list of special key names can be found at https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key)
+reset_key="z"           #Set this as your livesplit reset key too (numbers and letters have to be written in "", special keys like this: pynk.Key.shift, pynk.Key.return. A list of special key names can be found at https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key)
 timer_start="x"         #Set this as your livesplit start/stop key too (Same rules as above apply)
 livesplit=True          #Starts the timer as soon as the instance is unpaused
 saving_world_skip=False #Skips the 'Saving Chunks' screen when 3 or more instances are active
@@ -32,7 +32,7 @@ clicks=(
     (1200, 900),        #create new world
     (950, 570),         #more world options (set seed)
     (950, 230),         #seed box (set seed)
-    (700, 970))         #create new world
+    (700, 970))        #create new world
 
 import pynput.keyboard as pynk
 rebinds=(               #for rebinding key-key [key, action]. Change this to rebinds=[] if you dont want any rebinded keys and delete all following lines
@@ -42,5 +42,5 @@ rebinds=(               #for rebinding key-key [key, action]. Change this to reb
     ("c", pynk.Key.f5))
 
 pixeldata=(             #for visual_cue setting
-    (2, 26),            #position on the screen
+    (1918, 24),          #position on the screen
     (46, 33, 23))       #colour of the pixel when in 'dirt background' screen
