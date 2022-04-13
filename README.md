@@ -7,7 +7,7 @@ Multi-Instance Macro for Historical Versions of Minecraft: Java Edition for Wind
 - run as many minecraft instances as you want<br />
 - close Minecraft launcher<br />
 - run macro.py with python.exe<br />
-- reset using y, use x as your livesplit start/stop key<br />
+- reset using z, use x as your livesplit start/stop key<br />
 - whenever an instance is closed or opened, restart macro.py<br />
 
 ## customisation
