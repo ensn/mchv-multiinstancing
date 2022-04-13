@@ -95,29 +95,6 @@ def reset(minecrafts):
         time.sleep(settings.delays[13])
         send(settings.timer_start)
 
-
-def timeestimate(minecrafts):
-    tclick=settings.delays[13]+settings.delays[14]
-    tsend=settings.delays[15]+settings.delays[16]
-    est=settings.delays[0]+settings.delays[4]+settings.delays[10]+settings.delays[11]+4*tclick+2*tsend
-    
-    if settings.saving_world_skip and len(minecrafts)>=3:
-        est=est+settings.delays[2]+settings.delays[3]
-        
-    else:
-        est=est+settings.delays[1]
-        
-    if settings.seed!=0:
-        est=est+settings.delays[6]+settings.delays[7]+settings.delays[8]+settings.delays[9]+2*tclick+len(str(settings.seed))*tsend
-        
-    else:
-        est=est+settings.delays[5]
-        
-    if settings.livesplit:
-        est=est+settings.delays[12]
-        
-    return est
-
       
 class GameMacro:                
     def __init__(this, key, action):
@@ -140,7 +117,6 @@ class GameMacro:
 minecrafts=getwinlist()
 instances=len(minecrafts)
 print("Instances: "+str(instances))
-print("Seconds/Reset: "+str(timeestimate(minecrafts)))
 focusedInstance=0
 focusWindow(focusedInstance, minecrafts)
 ingamemacros=[]
