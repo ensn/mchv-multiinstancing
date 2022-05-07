@@ -36,13 +36,13 @@ clicks=(
     (950, 230),         #seed box (set seed)
     (700, 970))         #create new world
 
+pixeldata=(             #for visual_cue setting
+    (1918, 24),         #position (top right, windowed)
+    (46, 33, 23))       #rgb colour
+
 import pynput.keyboard as pynk #dont delete this line
 rebinds=(               #for rebinding key-key [key, action]. Change this to rebinds=[] if you dont want any rebinded keys and delete all following lines
     ("t", "7"),         #same rules as in line 2 apply
     ("g", "8"), 
     ("v", "9"),
     ("c", pynk.Key.f5))
-
-pixeldata=(             #for visual_cue setting
-    (1918, 24),         #position (top right, windowed)
-    (46, 33, 23))       #rgb colour
