@@ -9,10 +9,11 @@ Multi-Instance Macro for Historical Versions of Minecraft: Java Edition for Wind
 - run macro.py with python.exe<br />
 - reset using z, use x as your timer start key<br />
 - whenever an instance is closed or opened, restart macro.py<br />
+- if you need help with anything, join the [mchv discord](https://discord.com/invite/SdCStmwJ46)<br />
 
 ## customisation
 - edit settings.py in Notepad while keeping the syntax the samey<br />
-- many common settings for FHD screens can be found in common_settings.py. Replace the corresponding line(s) into settings.py<br />
+- many common settings for FHD screens can be found in commonsettings.py. Replace the corresponding line(s) into settings.py<br />
 
 ## it doesnt work
 - focus all instances manually, then restart macro.py<br />
