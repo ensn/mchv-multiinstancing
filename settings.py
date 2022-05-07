@@ -1,9 +1,11 @@
-seed=0                  #put 0 for random seed
-reset_key="z"           #Set this as your livesplit reset key too (numbers and letters have to be written in "", special keys like this: pynk.Key.shift, pynk.Key.return. A list of special key names can be found at https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key)
-timer_start="x"         #Set this as your livesplit start/stop key too (Same rules as above apply)
-livesplit=True          #Starts the timer as soon as the instance is unpaused
-saving_world_skip=False #Skips the 'Saving Chunks' screen when 3 or more instances are active
+seed=0                  #seed=0 for random seed
+reset_key="z"           #Timer reset key / macro trigger (numbers and letters have to be written in "", special keys like this: pynk.Key.shift, pynk.Key.return. A list of special key names can be found at https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key)
+timer=True              #Starts the timer after unpausing
+timer_start="x"         #Timer start key (Same rules as above)
+
 visual_cue=False        #Looks at the screen to determine whether the 'Saving Chunks' screen has ended, requires 'pyautogui' from pip
+seed_clipboard=True     #Copies seed for SS from clipboard instead of typing it out (automatically moves seed into clipboard when 'clipboard' from pip is installed)
+saving_world_skip=False #Skips 'Saving World' when >=3 instances are active
 
 delays=(
     0.1,                #esc - save and quit
@@ -19,7 +21,7 @@ delays=(
     0.4,                #finish typing seed - create new world 2 (SS)
     0,                  #create new world - focus next instance
     0.15,               #unpausing after focus
-    0,                  #start livesplit
+    0,                  #start timer
     0.03,               #mouse moving - pressing
     0.03,               #mouse pressing - releasing
     0,                  #keyboard pressing - releasing
@@ -32,9 +34,9 @@ clicks=(
     (1200, 900),        #create new world
     (950, 570),         #more world options (set seed)
     (950, 230),         #seed box (set seed)
-    (700, 970))        #create new world
+    (700, 970))         #create new world
 
-import pynput.keyboard as pynk
+import pynput.keyboard as pynk #dont delete this line
 rebinds=(               #for rebinding key-key [key, action]. Change this to rebinds=[] if you dont want any rebinded keys and delete all following lines
     ("t", "7"),         #same rules as in line 2 apply
     ("g", "8"), 
@@ -42,5 +44,5 @@ rebinds=(               #for rebinding key-key [key, action]. Change this to reb
     ("c", pynk.Key.f5))
 
 pixeldata=(             #for visual_cue setting
-    (1918, 24),          #position on the screen
-    (46, 33, 23))       #colour of the pixel when in 'dirt background' screen
+    (1918, 24),         #position (top right, windowed)
+    (46, 33, 23))       #rgb colour
