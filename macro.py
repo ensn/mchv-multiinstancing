@@ -8,23 +8,24 @@ except:
     import win32.win32gui as win32gui
 if settings.visual_cue:
     import pyautogui
-
+try:
+    import clipboard
+    if settings.seed!=0 and settings.seed_clipboard:
+        clipboard.copy(str(settings.seed))
+except:
+    pass
 
 mouse=pynm.Controller()
 keys=pynk.Controller()
 
-
 toplist = []
 winlist = []
 def enum_callback(hwnd, results):
-    winlist.append((hwnd, win32gui.GetWindowText(hwnd)))
-
-        
+    winlist.append((hwnd, win32gui.GetWindowText(hwnd)))  
 def getwinlist():
     win32gui.EnumWindows(enum_callback, toplist)
     window = [(hwnd, title) for hwnd, title in winlist if "minecraft" in title.lower()]
     return window
-
 
 def focusWindow(indx, window):
     window = window[indx]
@@ -38,7 +39,6 @@ def click(pos):
     mouse.press(pynm.Button.left)
     time.sleep(settings.delays[15])
     mouse.release(pynm.Button.left)
-
 
 def send(x):
     global keys
@@ -77,8 +77,14 @@ def reset(minecrafts):
         time.sleep(settings.delays[8])
         click(settings.clicks[4])       #seed box
         time.sleep(settings.delays[9])
-        for char in str(settings.seed):
-            send(char)
+        if settings.seed_clipboard:
+            keys.press(pynk.Key.ctrl)
+            time.sleep(settings.delays[16])
+            send("v")
+            keys.release(pynk.Key.ctrl)
+        else:
+            for char in str(settings.seed):
+                send(char)
         time.sleep(settings.delays[10])
         
     else:                                   #RS
@@ -91,7 +97,7 @@ def reset(minecrafts):
     time.sleep(settings.delays[12])
     send(pynk.Key.esc)                  #unpause
     
-    if settings.livesplit:
+    if settings.timer:
         time.sleep(settings.delays[13])
         send(settings.timer_start)
 
