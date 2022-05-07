@@ -5,7 +5,7 @@ timer_start="x"         #Timer start key (Same rules as above)
 
 visual_cue=False        #Looks at the screen to determine whether the 'Saving Chunks' screen has ended, requires 'pyautogui' from pip
 seed_clipboard=True     #Copies seed for SS from clipboard instead of typing it out (automatically puts seed into clipboard when 'clipboard' from pip is installed)
-saving_world_skip=False #Skips 'Saving World' when >=3 instances are active (always False)
+saving_world_skip=False #Skips 'Saving World' when >=3 instances are active (experimental)
 
 delays=(
     0.1,                #esc - save and quit
@@ -28,7 +28,7 @@ delays=(
     0,                  #keyboard after relasing
     0.25)               #double tap prevention for rebinds
 
-clicks=(
+clicks=(                #windowed, large GUI
     (950, 623),         #save and quit
     (950, 450),         #singleplayer
     (1200, 900),        #create new world
@@ -37,7 +37,7 @@ clicks=(
     (700, 970))         #create new world
 
 pixeldata=(             #for visual_cue setting
-    (1918, 24),         #position (top right, windowed)
+    (2, 25),            #position (top left, windowed)
     (46, 33, 23))       #rgb colour
 
 import pynput.keyboard as pynk #dont delete this line
