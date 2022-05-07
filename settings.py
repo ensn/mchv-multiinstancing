@@ -4,8 +4,8 @@ timer=True              #Starts the timer after unpausing
 timer_start="x"         #Timer start key (Same rules as above)
 
 visual_cue=False        #Looks at the screen to determine whether the 'Saving Chunks' screen has ended, requires 'pyautogui' from pip
-seed_clipboard=True     #Copies seed for SS from clipboard instead of typing it out (automatically moves seed into clipboard when 'clipboard' from pip is installed)
-saving_world_skip=False #Skips 'Saving World' when >=3 instances are active
+seed_clipboard=True     #Copies seed for SS from clipboard instead of typing it out (automatically puts seed into clipboard when 'clipboard' from pip is installed)
+saving_world_skip=False #Skips 'Saving World' when >=3 instances are active (always False)
 
 delays=(
     0.1,                #esc - save and quit
@@ -18,7 +18,7 @@ delays=(
     0.03,               #create new world - more world options (SS)
     0.05,               #more world options - click seed box (SS)
     0.05,               #click seed box - start typing seed (SS)
-    0.4,                #finish typing seed - create new world 2 (SS)
+    0.1,                #finish typing seed - create new world 2 (SS)
     0,                  #create new world - focus next instance
     0.15,               #unpausing after focus
     0,                  #start timer
