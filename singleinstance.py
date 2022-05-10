@@ -1,11 +1,7 @@
-global mouse, keys, focusedInstance
-import keyboard, time, os, settings
+global mouse, keys
+import keyboard, time, settings
 import pynput.mouse as pynm
 import pynput.keyboard as pynk
-try:
-    import win32gui
-except:
-    import win32.win32gui as win32gui
 if settings.visual_cue:
     import pyautogui
 try:
@@ -17,20 +13,6 @@ except:
 
 mouse=pynm.Controller()
 keys=pynk.Controller()
-
-toplist = []
-winlist = []
-def enum_callback(hwnd, results):
-    winlist.append((hwnd, win32gui.GetWindowText(hwnd)))  
-def getwinlist():
-    win32gui.EnumWindows(enum_callback, toplist)
-    window = [(hwnd, title) for hwnd, title in winlist if "minecraft" in title.lower()]
-    return window
-
-def focusWindow(indx, window):
-    window = window[indx]
-    win32gui.SetForegroundWindow(window[0])
-
 
 def click(pos):
     global mouse
@@ -48,7 +30,7 @@ def send(x):
     time.sleep(settings.delays[17])
 
 
-def reset(minecrafts):
+def reset():
     global focusedInstance
     send(pynk.Key.esc)
     time.sleep(settings.delays[0])
@@ -91,12 +73,6 @@ def reset(minecrafts):
         time.sleep(settings.delays[6])
         
     click(settings.clicks[5])           #create new world
-    time.sleep(settings.delays[11])
-    focusedInstance=(focusedInstance+1)%len(minecrafts)
-    focusWindow(focusedInstance, minecrafts)
-    time.sleep(settings.delays[12])
-    send(pynk.Key.esc)                  #unpause
-    
     if settings.timer:
         time.sleep(settings.delays[13])
         send(settings.timer_start)
@@ -120,17 +96,12 @@ class GameMacro:
 
 
 
-minecrafts=getwinlist()
-instances=len(minecrafts)
-print("Instances: "+str(instances))
-focusedInstance=0
-focusWindow(focusedInstance, minecrafts)
 ingamemacros=[]
 for item in settings.rebinds:
     ingamemacros.append(GameMacro(item[0], item[1]))
 while True:
     if keyboard.is_pressed(settings.reset_key):
-        reset(minecrafts)
+        reset()
     for gamemacro in ingamemacros:
         gamemacro.periodic_call()
     time.sleep(0.01)
