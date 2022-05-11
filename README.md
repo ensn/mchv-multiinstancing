@@ -1,4 +1,4 @@
-# mchv-multiinstancing
+# mchv-multiinstancing (b1.8)
 Multi-Instance Macro for Historical Versions of Minecraft: Java Edition for Windows
 
 ## how to use
