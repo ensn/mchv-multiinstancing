@@ -31,10 +31,10 @@ clicks=(                #windowed, large GUI
     (950, 630),         #save and quit
     (950, 450),         #singleplayer
     (1200, 905),        #create new world
-    (950, 400),         #seed box (SS)
+    (950, 400),         #seed box (set seed)
     (950, 620))         #create new world
 
-pixeldata=(             #for visual_cue setting
+pixeldata=(             #for visual_cue setting (windowed, large GUI)
     (587, 118),         #position
     (171, 161, 158))    #rgb colour
 
