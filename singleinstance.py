@@ -31,17 +31,11 @@ def send(x):
 
 
 def reset():
-    global focusedInstance
     send(pynk.Key.esc)
     time.sleep(settings.delays[0])
     click(settings.clicks[0])           #Save and quit
-    
-    if settings.saving_world_skip and len(minecrafts)>=3:
-        time.sleep(settings.delays[2])
-        focusWindow((focusedInstance-1)%len(minecrafts), minecrafts)
-        time.sleep(settings.delays[3])
         
-    elif settings.visual_cue:
+    if settings.visual_cue:
         time.sleep(settings.delays[4])
         while pyautogui.screenshot(region=settings.pixeldata[0]+(1,1)).getcolors()[0][1]==settings.pixeldata[1]:
             continue
