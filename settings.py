@@ -3,7 +3,7 @@ reset_key="z"           #Timer reset key / macro trigger (numbers and letters ha
 timer=True              #Starts the timer after unpausing
 timer_start="x"         #Timer start key (Same rules as above)
 
-visual_cue=False        #Looks at the screen to determine whether the 'Saving Chunks' screen has ended, requires 'pyautogui' from pip
+visual_cue=False        #Looks at the screen to determine whether the Title screen has appeared, requires 'pyautogui' from pip
 seed_clipboard=True     #Copies seed for SS from clipboard instead of typing it out (automatically puts seed into clipboard when 'clipboard' from pip is installed)
 saving_world_skip=False #Skips 'Saving World' when >=3 instances are active (experimental)
 
@@ -15,8 +15,7 @@ delays=(
     0.2,                #visual_cue delay before checking pixel
     0.03,               #singleplayer - create new world
     0.03,               #create new world - create new world (RS)
-    0.03,               #create new world - more world options (SS)
-    0.05,               #more world options - click seed box (SS)
+    0.05,               #create new world - click seed box (SS)
     0.05,               #click seed box - start typing seed (SS)
     0.1,                #finish typing seed - create new world 2 (SS)
     0,                  #create new world - focus next instance
@@ -29,16 +28,15 @@ delays=(
     0.25)               #double tap prevention for rebinds
 
 clicks=(                #windowed, large GUI
-    (950, 623),         #save and quit
+    (950, 630),         #save and quit
     (950, 450),         #singleplayer
-    (1200, 900),        #create new world
-    (950, 570),         #more world options (set seed)
-    (950, 230),         #seed box (set seed)
-    (700, 970))         #create new world
+    (1200, 905),        #create new world
+    (950, 400),         #seed box (SS)
+    (950, 620))         #create new world
 
 pixeldata=(             #for visual_cue setting
-    (2, 25),            #position (top left, windowed)
-    (46, 33, 23))       #rgb colour
+    (587, 118),         #position (top right, windowed)
+    (171, 161, 158))    #rgb colour
 
 import pynput.keyboard as pynk #dont delete this line
 rebinds=(               #for rebinding key-key [key, action]. Change this to rebinds=[] if you dont want any rebinded keys and delete all following lines
