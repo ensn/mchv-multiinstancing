@@ -35,7 +35,7 @@ clicks=(                #windowed, large GUI
     (950, 620))         #create new world
 
 pixeldata=(             #for visual_cue setting
-    (587, 118),         #position (top right, windowed)
+    (587, 118),         #position
     (171, 161, 158))    #rgb colour
 
 import pynput.keyboard as pynk #dont delete this line
