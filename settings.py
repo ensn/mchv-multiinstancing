@@ -1,5 +1,5 @@
 seed=0                  #seed=0 for random seed
-reset_key="z"           #Timer reset key / macro trigger (numbers and letters have to be written in "", special keys like this: pynk.Key.shift, pynk.Key.return. A list of special key names can be found at https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key)
+reset_key="z"           #Timer reset key / macro trigger (numbers/letters have to be written in "", special keys like this: pynk.Key.shift, pynk.Key.return. A list of special key names can be found at https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key)
 timer=True              #Starts the timer after unpausing
 timer_start="x"         #Timer start key (Same rules as line 2)
 
