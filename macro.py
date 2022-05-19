@@ -1,5 +1,5 @@
 global mouse, keys, focusedInstance
-import keyboard, time, os, settings
+import keyboard, time, settings
 import pynput.mouse as pynm
 import pynput.keyboard as pynk
 try:
@@ -71,7 +71,7 @@ def reset(minecrafts):
     time.sleep(settings.delays[5])
     click(settings.clicks[2])           #create new world
     
-    if settings.seed!=0:                    #SS
+    if settings.seed!=0:                #SS
         time.sleep(settings.delays[7])
         click(settings.clicks[3])       #more world options
         time.sleep(settings.delays[8])
@@ -87,7 +87,7 @@ def reset(minecrafts):
                 send(char)
         time.sleep(settings.delays[10])
         
-    else:                                   #RS
+    else:                               #RS
         time.sleep(settings.delays[6])
         
     click(settings.clicks[5])           #create new world
