@@ -1,7 +1,7 @@
 seed=0                  #seed=0 for random seed
 reset_key="z"           #Timer reset key / macro trigger (numbers and letters have to be written in "", special keys like this: pynk.Key.shift, pynk.Key.return. A list of special key names can be found at https://pynput.readthedocs.io/en/latest/keyboard.html#pynput.keyboard.Key)
 timer=True              #Starts the timer after unpausing
-timer_start="x"         #Timer start key (Same rules as above)
+timer_start="x"         #Timer start key (Same rules as line 2)
 
 visual_cue=False        #Looks at the screen to determine whether the 'Saving Chunks' screen has ended, requires 'pyautogui' from pip
 seed_clipboard=True     #Copies seed for SS from clipboard instead of typing it out (automatically puts seed into clipboard when 'clipboard' from pip is installed)
@@ -37,12 +37,12 @@ clicks=(                #windowed, large GUI
     (700, 970))         #create new world
 
 pixeldata=(             #for visual_cue setting
-    (2, 25),            #position (top left, windowed)
+    (1918, 24),         #position (top right, windowed)
     (46, 33, 23))       #rgb colour
 
 import pynput.keyboard as pynk #dont delete this line
-rebinds=(               #for rebinding key-key [key, action]. Change this to rebinds=[] if you dont want any rebinded keys and delete all following lines
-    ("t", "7"),         #same rules as in line 2 apply
+rebinds=(               #For rebinding key-key [key, action]. Change this to rebinds=() if you dont want any rebinded keys and delete all following lines
+    ("t", "7"),         #Same rules as line 2
     ("g", "8"), 
     ("v", "9"),
     ("c", pynk.Key.f5))
