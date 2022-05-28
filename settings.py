@@ -12,7 +12,6 @@ delays=(
     0.7,                #saving world
     0.05,               #saving_world_skip before focus
     0.1 ,               #saving_world_skip after focus
-    0.2,                #visual_cue delay before checking pixel
     0.03,               #singleplayer - create new world
     0.03,               #create new world - create new world (RS)
     0.05,               #create new world - click seed box (SS)
@@ -23,7 +22,7 @@ delays=(
     0,                  #start timer
     0.03,               #mouse moving - pressing
     0.03,               #mouse pressing - releasing
-    0,                  #keyboard pressing - releasing
+    0.03,               #keyboard pressing - releasing
     0,                  #keyboard after relasing
     0.25)               #double tap prevention for rebinds
 
