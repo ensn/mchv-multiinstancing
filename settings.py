@@ -3,7 +3,7 @@ reset_key="z"           #Timer reset key / macro trigger (numbers/letters have t
 timer=True              #Starts the timer after unpausing
 timer_start="x"         #Timer start key (Same rules as line 2)
 
-visual_cue=False        #Looks at the screen to determine whether the 'Saving Chunks' screen has ended, requires 'pyautogui' from pip
+visual_cue=False        #Looks at the screen to determine whether the Title screen has appeared, requires 'pyautogui' from pip
 seed_clipboard=True     #Copies seed for SS from clipboard instead of typing it out (automatically puts seed into clipboard when 'clipboard' from pip is installed)
 saving_world_skip=False #Skips 'Saving World' when >=3 instances are active (experimental)
 
@@ -12,7 +12,6 @@ delays=(
     0.7,                #saving world
     0.05,               #saving_world_skip before focus
     0.1 ,               #saving_world_skip after focus
-    0.2,                #visual_cue delay before checking pixel
     0.03,               #singleplayer - create new world
     0.03,               #create new world - create new world (RS)
     0.03,               #create new world - more world options (SS)
@@ -24,7 +23,7 @@ delays=(
     0,                  #start timer
     0.03,               #mouse moving - pressing
     0.03,               #mouse pressing - releasing
-    0,                  #keyboard pressing - releasing
+    0.03,               #keyboard pressing - releasing
     0,                  #keyboard after relasing
     0.25)               #double tap prevention for rebinds
 
@@ -36,9 +35,9 @@ clicks=(                #windowed, large GUI
     (950, 230),         #seed box (set seed)
     (700, 970))         #create new world
 
-pixeldata=(             #for visual_cue setting
-    (1918, 24),         #position (top right, windowed)
-    (46, 33, 23))       #rgb colour
+pixeldata=(             #for visual_cue setting (windowed, large GUI)
+    (587, 118),         #position
+    (165, 156, 153))    #rgb colour
 
 import pynput.keyboard as pynk #dont delete this line
 rebinds=(               #For rebinding key-key [key, action]. Change this to rebinds=() if you dont want any rebinded keys and delete all following lines
