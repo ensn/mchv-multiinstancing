@@ -3,7 +3,7 @@ reset_key="z"           #Timer reset key / macro trigger (numbers/letters have t
 timer=True              #Starts the timer after unpausing
 timer_start="x"         #Timer start key (Same rules as line 2)
 
-visual_cue=False        #Looks at the screen to determine whether the Title screen has appeared, requires 'pyautogui' from pip
+visual_cue=False        #Looks at the screen to determine whether the Title screen has appeared, requires 'pyautogui' and 'pillow' from pip
 seed_clipboard=True     #Copies seed for SS from clipboard instead of typing it out (automatically puts seed into clipboard when 'clipboard' from pip is installed)
 saving_world_skip=False #Skips 'Saving World' when >=3 instances are active (experimental)
 
