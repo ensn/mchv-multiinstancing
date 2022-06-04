@@ -16,7 +16,7 @@ clicks=(                #fullscreen/borderless, small GUI
     (950, 130),         #seed box (set seed)
     (950, 390))         #create new world
 
-pixeldata=(             #for visual_cue setting (fullscreen/borderless, small GUI)
+pixeldata=(             #for visual_cue setting (borderless, small GUI)
     (835, 32),          #position
     (171, 161, 158))    #rgb colour
 
@@ -38,7 +38,7 @@ clicks=(                #fullscreen/borderless, normal GUI
     (950, 250),         #seed box (set seed)
     (950, 505))         #create new world
 
-pixeldata=(             #for visual_cue setting (fullscreen/borderless, normal GUI)
+pixeldata=(             #for visual_cue setting (borderless, normal GUI)
     (711, 63),          #position
     (171, 161, 158))    #rgb colour
 
@@ -60,7 +60,7 @@ clicks=(                #fullscreen/borderless, large GUI
     (950, 380),         #seed box (set seed)
     (950, 625))         #create new world
 
-pixeldata=(             #for visual_cue setting (fullscreen/borderless, large GUI)
+pixeldata=(             #for visual_cue setting (borderless, large GUI)
     (586, 94),          #position
     (171, 161, 158))    #rgb colour
 
@@ -82,6 +82,6 @@ clicks=(                #fullscreen/borderless, auto GUI
     (950, 500),         #seed box (set seed)
     (950, 740))         #create new world
 
-pixeldata=(             #for visual_cue setting (fullscreen/borderless, auto GUI)
+pixeldata=(             #for visual_cue setting (borderless, auto GUI)
     (462, 126),         #position
     (171, 161, 158))    #rgb colour
